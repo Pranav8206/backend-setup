@@ -1,0 +1,16 @@
+{
+  "name": "3professionalbackendsetup",
+  "version": "1.0.0",
+  "description": "Learning how to create Professional backend setup.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "backend",
+    "express"
+  ],
+  "author": "pranav mavle",
+  "license": "ISC"
+}
