@@ -4,6 +4,7 @@ const asyncHandler = (requestHandler) => {
   };
 };
 
+export { asyncHandler };
 // const asyncHandler = () => {}
 // const asyncHandler = (func) => { () => {}}
 // const asyncHanlder = (func) => () => {}
