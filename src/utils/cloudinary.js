@@ -1,4 +1,5 @@
 import { v2 as cloudinary } from "cloudinary";
+import { log } from "console";
 import fs from "fs";
 
 cloudinary.config({
@@ -15,10 +16,16 @@ const uploadeOnCloudinary = async (localFilePath) => {
       resource_type: "auto",
     });
     // if file upload successfully
-    console.log("file uploaded on cloudinary.");
+    console.log("localFilePath", localFilePath);
+
     console.log(response.url);
 
-    return response;
+     fs.unlink(localFilePath, (err) => {
+      if (err) throw err;
+      console.log("path/file.txt was deleted");
+    });
+
+    return response.url;
   } catch (error) {
     fs.unlinkSync(localFilePath); // remove locally saved temporary
     // file as upload operation got failed
@@ -26,4 +33,6 @@ const uploadeOnCloudinary = async (localFilePath) => {
   }
 };
 
-console.log(uploadeOnCloudinary);
+console.log(uploadeOnCloudinary, "printing the function uploadeOnCloudinary");
+
+export { uploadeOnCloudinary };
