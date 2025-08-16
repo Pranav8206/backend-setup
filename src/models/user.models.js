@@ -1,6 +1,7 @@
 import mongoose, { model, Schema } from "mongoose";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { Video } from "./video.modles.js";
 
 const userSchema = new Schema(
   {
